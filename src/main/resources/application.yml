@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: transactions-service
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://postgres:5432/transactions_database}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:postgres}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+evm:
+  url: wss://mainnet.infura.io/ws/v3/436007c02395485f8d4b4bd68c2eed82
